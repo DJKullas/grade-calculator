@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "grade-calculator"
+  "defaultProject": "grade-calculator",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

@@ -1,0 +1,59 @@
+<StackLayout>
+    
+<Label text="Grade Calculator" class="h1" horizontalAlignment="center"></Label>
+<GridLayout rows="auto" columns="*">
+
+    <Label row="0" text="Percent Worth" class="h3" horizontalAlignment="left"></Label>
+    <Label row="0" text="Grade Received" class="h3 goRight" horizontalAlignment="right"></Label>
+</GridLayout>
+<GridLayout *ngFor="let section of sections" rows="auto" columns="*">
+    <TextField row="0" horizontalAlignment="left" hint="Percent Worth" [(ngModel)]="section.percent" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
+    <TextField row="0" horizontalAlignment="right" hint="Grade Received" [(ngModel)]="section.grade" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
+  </GridLayout>
+<Button class="btn btn-primary btn-active" id="button" text="Add Section" (tap)="addSection()"></Button>
+
+<Label text="{{score}}" class="h3" horizontalAlignment="center"></Label>
+
+</StackLayout>
+
+<!--
+Original Web template:
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <h1>Grade Calculator</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 text-right">
+    <h3>Percent</h3>
+  </div>
+  <div class="col-md-4 text-center">
+    <h3>Points Added</h3>
+  </div>
+  <div class="col-md-4 text-left">
+      <h3>Grade</h3>
+    </div>
+</div>
+<div *ngFor="let section of sections" class="row">
+  <div class="col-md-4 text-right">
+    <input [(ngModel)]="section.percent" (ngModelChange)="calculateScore()" type="number" placeholder="Percent Worth">
+  </div>
+  <div class="col-md-4 text-center">
+    <p>{{(section.percent * section.grade * .01).toFixed(2)}}</p>
+  </div>
+  <div class="col-md-4 text-left">
+    <input [(ngModel)]="section.grade" (ngModelChange)="calculateScore()" type="number" placeholder="Grade Received">
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-md-12 text-center">
+    <button class="btn btn-primary" (click)="addSection()">Add a Grading Section</button>
+  </div>
+</div>
+<div class="row justify-content-md-center">
+  <div class="col-md-12 text-center">
+    <h2>Score: {{score.toFixed(2)}}</h2>
+  </div>
+</div>
+-->

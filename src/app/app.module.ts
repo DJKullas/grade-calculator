@@ -14,7 +14,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

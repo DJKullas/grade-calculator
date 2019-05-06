@@ -8,8 +8,8 @@ import { Section } from './section'
 })
 export class CalculatorComponent implements OnInit {
 
-  sections: Section[] = [new Section(0, 0)];
-  score: number;
+  sections: Section[] = [new Section(null, null)];
+  score: number = 0;
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   addSection() {
-    this.sections.push(new Section(0, 0));
+    this.sections.push(new Section(null, null));
   }
 
   calculateScore() {
