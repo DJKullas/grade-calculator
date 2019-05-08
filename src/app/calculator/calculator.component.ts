@@ -10,6 +10,7 @@ export class CalculatorComponent implements OnInit {
 
   sections: Section[] = [new Section(null, null)];
   score: number = 0;
+  totalPercent: number = 0;
 
   constructor() { }
 
@@ -23,9 +24,11 @@ export class CalculatorComponent implements OnInit {
   calculateScore() {
     let temp = 0;
     this.score = 0;
+    this.totalPercent = 0;
     this.sections.forEach(s => {
       temp = s.grade * s.percent * .01;
       this.score += temp;
+      this.totalPercent += +s.percent;
     });
   }
 }

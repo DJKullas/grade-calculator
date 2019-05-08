@@ -1,20 +1,25 @@
+<ScrollView>
 <StackLayout>
     
 <Label text="Grade Calculator" class="h1" horizontalAlignment="center"></Label>
-<GridLayout rows="auto" columns="*">
+<GridLayout class="textfield-section" rows="auto" columns="*">
 
-    <Label row="0" text="Percent Worth" class="h3" horizontalAlignment="left"></Label>
-    <Label row="0" text="Grade Received" class="h3 goRight" horizontalAlignment="right"></Label>
+    <Label row="0" text="Percent Worth" class="h2 pad-left" horizontalAlignment="left"></Label>
+    <Label row="0" text="Grade Received" class="h2 pad-right" horizontalAlignment="right"></Label>
 </GridLayout>
-<GridLayout *ngFor="let section of sections" rows="auto" columns="*">
-    <TextField row="0" horizontalAlignment="left" hint="Percent Worth" [(ngModel)]="section.percent" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
-    <TextField row="0" horizontalAlignment="right" hint="Grade Received" [(ngModel)]="section.grade" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
+<GridLayout class="textfield-section" *ngFor="let section of sections" rows="auto" columns="*">
+    <TextField class="pad-left textfield text-center" row="0" horizontalAlignment="left" hint="Percent Worth" [(ngModel)]="section.percent" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
+    <TextField class="pad-right textfield text-center" row="0" horizontalAlignment="right" hint="Grade Received" [(ngModel)]="section.grade" (ngModelChange)="calculateScore()" keyboardType="phone"></TextField>
   </GridLayout>
 <Button class="btn btn-primary btn-active" id="button" text="Add Section" (tap)="addSection()"></Button>
 
-<Label text="{{score}}" class="h3" horizontalAlignment="center"></Label>
+<Label text="{{score.toFixed(2)}}" class="h3" horizontalAlignment="center"></Label>
+
+<Label *ngIf="totalPercent > 100" text="Total Percent is greater than 100!" class="h3 red" horizontalAlignment="center"></Label>
 
 </StackLayout>
+
+</ScrollView>
 
 <!--
 Original Web template:

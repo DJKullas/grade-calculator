@@ -5,3 +5,23 @@ https://docs.nativescript.org/angular/ui/styling
 */
 
 //@import '~nativescript-theme-core/css/purple.css';
+.pad-right {
+    padding-right: 10%;
+}
+
+.pad-left {
+    padding-left: 10%;
+}
+
+.textfield {
+    height: 100px;
+}
+
+.textfield-section {
+    
+    border-bottom-width: 2%;
+}
+
+.red {
+    color: red;
+}
